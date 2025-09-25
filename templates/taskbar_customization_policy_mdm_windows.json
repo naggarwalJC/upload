@@ -1,0 +1,60 @@
+{
+  "name": "taskbar_customization_policy_mdm_windows",
+  "display_name": "Taskbar Customization Policy",
+  "description": "Provides administrators with the ability to customize the taskbar on Windows 10 and 11 fleet, ensuring a consistent and controlled user experience across the organization",
+  "target_os": "windows",
+  "policy_type": "taskbar_policy",
+  "csp_uris": [
+    "./Device/Vendor/MSFT/Policy/Config/NewsAndInterests/EnableNewsAndInterestsOnTaskbar",
+    "./Device/Vendor/MSFT/Policy/Config/Search/ConfigureSearchOnTaskbarMode",
+    "./Device/Vendor/MSFT/Policy/Config/Start/HideTaskViewButton"
+  ],
+  "config_fields": [
+    {
+      "name": "hide_task_view_button",
+      "display_name": "Hide Task View Button",
+      "description": "Hide or show the task view button on the taskbar",
+      "type": "CHECKBOX",
+      "csp_uri": "./Device/Vendor/MSFT/Policy/Config/Start/HideTaskViewButton",
+      "required": false,
+      "default_value": null
+    },
+    {
+      "name": "search_mode",
+      "display_name": "Search Mode",
+      "description": "Configure how search appears on the taskbar",
+      "type": "SELECT",
+      "csp_uri": "./Device/Vendor/MSFT/Policy/Config/Search/ConfigureSearchOnTaskbarMode",
+      "required": false,
+      "default_value": null,
+      "options": [
+        {
+          "label": "Hidden",
+          "value": "0"
+        },
+        {
+          "label": "Search Icon",
+          "value": "1"
+        },
+        {
+          "label": "Search Box",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "name": "news_and_interests",
+      "display_name": "News and Interests",
+      "description": "Enable or disable news and interests on the taskbar",
+      "type": "CHECKBOX",
+      "csp_uri": "./Device/Vendor/MSFT/Policy/Config/NewsAndInterests/EnableNewsAndInterestsOnTaskbar",
+      "required": false,
+      "default_value": null
+    }
+  ],
+  "metadata": {
+    "created_at": "2025-09-25T18:23:38.435807",
+    "created_by": "devops-integration-agent",
+    "version": "1.0.0"
+  }
+}
